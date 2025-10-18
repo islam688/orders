@@ -4,7 +4,6 @@ import com.example.demo.model.Order;
 import com.example.demo.repository.OrderRepository;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -16,12 +15,10 @@ public class OrderService {
     }
 
     public List<Order> getOrders() {
-    	List<Order> orders = new ArrayList<>();
-    	orders.add(new Order("islam" ,0));
-    	orders.add(new Order("islam" ,0));
-    	orders.add(new Order("islam" ,0));
-    	orders.add(new Order("islam" ,0));
-    	return orders;
-     //  return repository.findAll();
+        return repository.findAll();
+    }
+    
+    public void saveOrder(Order order) {
+    	repository.save(order);
     }
 }
